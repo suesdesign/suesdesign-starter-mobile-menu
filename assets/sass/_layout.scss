@@ -1,0 +1,186 @@
+@import "mixins";
+@import "variables";
+
+*,
+*:after,
+*:before {
+	margin: 0;
+	padding: 0;
+	@extend %border-box;
+}
+
+#banner {
+	//padding: 0.3rem;
+	.banner-logo {
+		float: left;
+		margin-bottom: 0.6rem;
+		height: auto;
+		padding-left: 0.3rem;
+	}
+}
+
+#main_sidebar {
+	padding: 1.5rem 0.3rem 0 0.3rem;
+}
+
+article footer{
+	padding: 0.6rem 0;
+}
+
+.footer-info {
+	padding: 0 0.5rem;
+}
+
+.container, .outer-wrapper, .column1, .column2, #maincontent, #main-nav, #main-nav ul, #main-menu, #main-menu-container, .main-menu-wrapper {
+	@extend %clearfix;
+}
+
+header .container {
+	padding: 0;
+}
+
+#maincontent {
+	padding: 0 0.5rem;
+}
+
+#footer {
+	clear: both;
+}
+
+footer .container {
+	padding: 0 0.3rem;
+}
+
+/* Gutenberg columns for mobile*/
+@media all and (max-width: $screen-sm + 1rem) {
+	.wp-block-columns {
+    display: block;
+  }
+  
+  #maincontent div.wp-block-column {
+    margin: 20px 0;
+	}
+}
+
+
+@media all and (min-width: $screen-sm) {
+
+	.container, .main-menu-wrapper {
+		margin: 0 auto;
+	}
+
+	#maincontent {
+		padding: 0;
+	}
+
+	#maincontent.column1 {
+		width: 33%;
+		flex-grow: 0;
+		float: left;
+		padding: 0 0 $gutter-width 0;
+	}
+
+	#maincontent.column2 {
+		width: 66%;
+		float: left;
+		padding: 0 $gutter-width 0 0;
+	}
+
+	.container {
+		padding: 0;
+		margin: 0 auto;
+	}
+	.column1 {
+		width: 33%;
+		float: left;
+		padding: 0 0 $gutter-width 0;
+	}
+
+	.alignleft {
+		float: left;
+		margin: 0 0.6rem 0.6rem 0;
+	}
+
+	.alignright {
+		float: right;
+		margin: 0 0 0.6rem 0.6rem;
+	}
+
+	.wp-post-image {
+		float: right;
+		margin: 0 0 0.6rem 0.6rem;
+	}
+
+	.wp-block-image .alignleft {
+		float: left;
+		margin: 0 0.6rem 0.6rem 0;
+	}
+
+	.wp-block-image .alignright {
+		float: right;
+		margin: 0 0 0.6rem 0.6rem;
+	}
+ 
+	#banner {
+		padding: 0.3rem 0 0;
+		img.banner-logo {
+			height: auto;
+			padding-left: 0;
+		}
+	}
+
+	#main-nav {
+		clear: both;
+	}
+
+	footer {
+		.copyright {
+			float: left;
+		}
+		.credit {
+			float: right;
+		}
+		.container {
+			padding: 0;
+		}
+
+	}
+
+	/* Make footer stick to bottom of page on short pages */
+
+	header, #footer {
+		flex: none;
+	}
+
+	body {
+		flex: 1 0 auto;
+	}
+
+	#maincontent {
+		flex-direction: column;
+ 		display: flex;
+ 		min-height: 100vh;
+	}
+}
+
+
+
+@media all and ( min-width: $screen-sm )
+	and ( max-width: $screen-md ) {
+	.container, #main-nav {
+		width: $screen-sm * .95;
+	}
+}
+
+@media all and ( min-width: $screen-md )
+	and ( max-width: $screen-lg ) {
+	.container, #main-nav {
+		width: $screen-md * .95;
+	}
+}
+
+@media all and (min-width: $screen-lg) {
+	.container, #main-nav {
+		width: $screen-lg * .95;
+	}
+}

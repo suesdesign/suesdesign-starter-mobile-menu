@@ -1,0 +1,8 @@
+node_modules
+.npm-debug.log
+tmp
+.sass-cache
+assets/js/superfish.min.js
+package-lock.json
+.DS_Store
+assets/.DS_Store
